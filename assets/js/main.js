@@ -89,7 +89,6 @@ Stampare le stesse informazioni su DOM sottoforma di stringhe
  */
 
 const teamsElDom = document.querySelector('.teams');
-console.log(teamsElDom);
 
 for (const key in memberTeam) {
 
@@ -99,8 +98,8 @@ for (const key in memberTeam) {
     //creo il markup che voglio per le card
     const markup = 
     `<div class="col-4">
-    <h3 class="mt-5 mt-3 ps-2">Membro con la stringa al posto dell'immagine:</h3>
-    <ul class="list-group p-2">
+    <h3 class="mt-5 mt-3 p-4 text-center">Membro con la stringa al posto dell'immagine:</h3>
+    <ul class="list-group">
         <li class="list-group-item"><strong>${member.nome}</strong></li>
         <li class="list-group-item">${member.ruolo}</li>
         <li class="list-group-item">${member.foto}</li>
@@ -127,8 +126,8 @@ for (const key in memberTeam) {
     //creo il markup che voglio per le card
     const markup = 
     `<div class="col-4">
-    <h3 class="mt-5 mt-3 ps-2">Membro con le immagini:</h3>
-    <ul class="list-group p-2">
+    <h3 class="mt-5 mt-3 p-4 text-center">Membro con le immagini:</h3>
+    <ul class="list-group">
         <li class="list-group-item"><strong>${member.nome}</strong></li>
         <li class="list-group-item">${member.ruolo}</li>
         <li class="list-group-item"><img src="${member.foto}"></li>
@@ -182,13 +181,12 @@ function newMember (choseArray) {
         //creo una variabile cosi da non riscrivere tante volte 'memberTeam[key]'
         const lastMember = (choseArray.length) - 1;
         const member = choseArray[lastMember];
-        console.log(lastMember);
     
         //creo il markup che voglio per le card
         const markup = 
         `<div class="col-4">
-        <h3 class="mt-5 mt-3 ps-2">Membro con le immagini:</h3>
-        <ul class="list-group p-2">
+        <h3 class="mt-5 mt-3 p-4 text-center">Membro con le immagini:</h3>
+        <ul class="list-group">
             <li class="list-group-item"><strong>${member.nome}</strong></li>
             <li class="list-group-item">${member.ruolo}</li>
             <li class="list-group-item"><img src="${member.foto}"></li>
