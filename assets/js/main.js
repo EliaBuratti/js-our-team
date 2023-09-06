@@ -60,4 +60,24 @@ const memberTeam = [
 
 ];
 
-console.log(memberTeam);
+//console.log(memberTeam);
+
+
+/* MILESTONE 1:
+Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+ */
+
+//creo un ciclo che mi scorre nell'array tramite un 'forin'
+
+for (const key in memberTeam) {
+
+    //creo una variabile cosi da non riscrivere tante volte 'memberTeam[key]'
+    const member = memberTeam[key];
+
+    console.log(member);
+    console.log(member.nome); //utilizzo la dot notation
+    console.log(member.ruolo); //utilizzo la dot notation
+    console.log(member['foto']); //utilizzo la bracket notation
+    // posso utilizzare entrambi i modi in questo caso 
+    
+};
