@@ -9,7 +9,7 @@ body {
     background-color: #71C9CE;
 }
 
-.teams > ul {
+.teams ul {
     width: fit-content;
 
     & li {
@@ -18,5 +18,6 @@ body {
 
     & img {
         border-radius: 0.5rem;
+        max-width: 100%;
     }
 }

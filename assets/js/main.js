@@ -96,20 +96,27 @@ for (const key in memberTeam) {
     //creo una variabile cosi da non riscrivere tante volte 'memberTeam[key]'
     const member = memberTeam[key];
 
+    //creo il markup che voglio per le card
     const markup = 
-    `<h3 class="pt-4">Membro:</h3>
-    <ul class="list-group">
+    `<div class="col-4">
+    <h3 class="mt-5 pt-3 ps-2">Membro con la stringa al posto dell'immagine:</h3>
+    <ul class="list-group p-2">
         <li class="list-group-item"><strong>${member.nome}</strong></li>
         <li class="list-group-item">${member.ruolo}</li>
-        <li class="list-group-item">${member.foto}</li>
-    </ul>`;
+        <li class="list-group-item">${member.foto}></li>
+    </ul>
+    </div>`;
     
     teamsElDom.insertAdjacentHTML('beforeend', markup);
 
 };
 
 /* BONUS 1:
-Trasformare la stringa foto in una immagine effettiva
+Trasformare la stringa foto in una immagine effettiva ☑️
+
+
+ BONUS 2:
+Organizzare i singoli membri in card/schede ☑️
  */
 
 for (const key in memberTeam) {
@@ -117,15 +124,20 @@ for (const key in memberTeam) {
     //creo una variabile cosi da non riscrivere tante volte 'memberTeam[key]'
     const member = memberTeam[key];
 
+    //creo il markup che voglio per le card
     const markup = 
-    `<h3 class="mt-5 pt-3 border-top border-3">Membro con le immagini:</h3>
-    <ul class="list-group">
+    `<div class="col-4">
+    <h3 class="mt-5 pt-3 ps-2">Membro con le immagini:</h3>
+    <ul class="list-group p-2">
         <li class="list-group-item"><strong>${member.nome}</strong></li>
         <li class="list-group-item">${member.ruolo}</li>
-        <li class="list-group-item"><img src="${member.foto}" class""></li>
-    </ul>`;
+        <li class="list-group-item"><img src="${member.foto}"></li>
+    </ul>
+    </div>`;
     
     teamsElDom.insertAdjacentHTML('beforeend', markup);
 
 };
+
+
 
