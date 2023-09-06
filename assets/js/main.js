@@ -60,7 +60,8 @@ const memberTeam = [
 
 ];
 
-//console.log(memberTeam);
+console.log('MILESTONE 0');
+console.log(memberTeam);
 
 
 /* MILESTONE 1:
@@ -69,6 +70,7 @@ Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e 
 
 //creo un ciclo che mi scorre nell'array tramite un 'forin'
 
+console.log('MILESTONE 1');
 for (const key in memberTeam) {
 
     //creo una variabile cosi da non riscrivere tante volte 'memberTeam[key]'
@@ -80,4 +82,28 @@ for (const key in memberTeam) {
     console.log(member['foto']); //utilizzo la bracket notation
     // posso utilizzare entrambi i modi in questo caso 
     
+};
+
+/* MILESTONE 2:
+Stampare le stesse informazioni su DOM sottoforma di stringhe
+ */
+
+const teamsElDom = document.querySelector('.teams');
+console.log(teamsElDom);
+
+for (const key in memberTeam) {
+
+    //creo una variabile cosi da non riscrivere tante volte 'memberTeam[key]'
+    const member = memberTeam[key];
+
+    const markup = 
+    `<h3 class="pt-4">Membro:</h3>
+    <ul>
+        <li>${member.nome}</li>
+        <li>${member.ruolo}</li>
+        <li>${member.foto}</li>
+    </ul>`;
+    
+    teamsElDom.insertAdjacentHTML('beforeend', markup);
+
 };
