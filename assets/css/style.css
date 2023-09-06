@@ -10,7 +10,9 @@ body {
 }
 
 .teams ul {
-    width: fit-content;
+
+    text-align: center;
+    max-width: 420px;
 
     & li {
         background-color: #E3FDFD;

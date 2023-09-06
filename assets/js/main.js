@@ -99,11 +99,11 @@ for (const key in memberTeam) {
     //creo il markup che voglio per le card
     const markup = 
     `<div class="col-4">
-    <h3 class="mt-5 pt-3 ps-2">Membro con la stringa al posto dell'immagine:</h3>
+    <h3 class="mt-5 mt-3 ps-2">Membro con la stringa al posto dell'immagine:</h3>
     <ul class="list-group p-2">
         <li class="list-group-item"><strong>${member.nome}</strong></li>
         <li class="list-group-item">${member.ruolo}</li>
-        <li class="list-group-item">${member.foto}></li>
+        <li class="list-group-item">${member.foto}</li>
     </ul>
     </div>`;
     
@@ -127,7 +127,7 @@ for (const key in memberTeam) {
     //creo il markup che voglio per le card
     const markup = 
     `<div class="col-4">
-    <h3 class="mt-5 pt-3 ps-2">Membro con le immagini:</h3>
+    <h3 class="mt-5 mt-3 ps-2">Membro con le immagini:</h3>
     <ul class="list-group p-2">
         <li class="list-group-item"><strong>${member.nome}</strong></li>
         <li class="list-group-item">${member.ruolo}</li>
@@ -138,6 +138,68 @@ for (const key in memberTeam) {
     teamsElDom.insertAdjacentHTML('beforeend', markup);
 
 };
+
+
+//bonus Extra 
+//possibilità di aggiungere membri
+
+const addMemberEl = document.querySelector('button.add-member');
+
+//creo un eventlistener dal bottone 'aggiungi'
+
+addMemberEl.addEventListener('click', function() {
+
+    //ottengo i valori dall'input dell utente
+    const firstNameEl = document.querySelector('.first-name').value;
+    const lastNameEl = document.querySelector('.last-name').value;
+    const roleMemberEl = document.querySelector('.role-member').value;
+
+    //mi assicuro che non ci siano campi vuoti
+    if(firstNameEl != '' && lastNameEl != '' && roleMemberEl != '') {
+        
+        //pusho nell'array i dati che ha inserito l'utente
+        memberTeam.push({
+            nome: firstNameEl + ' ' + lastNameEl,
+            ruolo: roleMemberEl,	
+            foto: 'https://picsum.photos/400/300'
+        });
+
+        //invoco la funzione per stampare la card in pagina
+        newMember(memberTeam);
+
+    } else { 
+        
+        //se ci sono campi vuoti
+        alert('compila Tutti i campi!')
+    };
+
+});
+
+
+//creo una funzione per aggiungere un nuovo membro
+function newMember (choseArray) {
+
+        //creo una variabile cosi da non riscrivere tante volte 'memberTeam[key]'
+        const lastMember = (choseArray.length) - 1;
+        const member = choseArray[lastMember];
+        console.log(lastMember);
+    
+        //creo il markup che voglio per le card
+        const markup = 
+        `<div class="col-4">
+        <h3 class="mt-5 mt-3 ps-2">Membro con le immagini:</h3>
+        <ul class="list-group p-2">
+            <li class="list-group-item"><strong>${member.nome}</strong></li>
+            <li class="list-group-item">${member.ruolo}</li>
+            <li class="list-group-item"><img src="${member.foto}"></li>
+        </ul>
+        </div>`;
+        
+        teamsElDom.insertAdjacentHTML('afterbegin', markup);
+}
+
+
+
 
 
 
