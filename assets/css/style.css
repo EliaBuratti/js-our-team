@@ -5,3 +5,18 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #71C9CE;
+}
+
+.teams > ul {
+    width: fit-content;
+
+    & li {
+        background-color: #E3FDFD;
+    }
+
+    & img {
+        border-radius: 0.5rem;
+    }
+}

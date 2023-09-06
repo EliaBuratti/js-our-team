@@ -98,12 +98,34 @@ for (const key in memberTeam) {
 
     const markup = 
     `<h3 class="pt-4">Membro:</h3>
-    <ul>
-        <li>${member.nome}</li>
-        <li>${member.ruolo}</li>
-        <li>${member.foto}</li>
+    <ul class="list-group">
+        <li class="list-group-item"><strong>${member.nome}</strong></li>
+        <li class="list-group-item">${member.ruolo}</li>
+        <li class="list-group-item">${member.foto}</li>
     </ul>`;
     
     teamsElDom.insertAdjacentHTML('beforeend', markup);
 
 };
+
+/* BONUS 1:
+Trasformare la stringa foto in una immagine effettiva
+ */
+
+for (const key in memberTeam) {
+
+    //creo una variabile cosi da non riscrivere tante volte 'memberTeam[key]'
+    const member = memberTeam[key];
+
+    const markup = 
+    `<h3 class="mt-5 pt-3 border-top border-3">Membro con le immagini:</h3>
+    <ul class="list-group">
+        <li class="list-group-item"><strong>${member.nome}</strong></li>
+        <li class="list-group-item">${member.ruolo}</li>
+        <li class="list-group-item"><img src="${member.foto}" class""></li>
+    </ul>`;
+    
+    teamsElDom.insertAdjacentHTML('beforeend', markup);
+
+};
+
