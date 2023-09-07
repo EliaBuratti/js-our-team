@@ -25,24 +25,24 @@
             <!-- name and lastname -->
             <div class="input-group py-3">
                 <span class="input-group-text">Nome e cognome</span>
-                <input type="text" aria-label="First name" class="form-control first-name" required>
-                <input type="text" aria-label="Last name" class="form-control last-name" required>
+                <input type="text" aria-label="First-name" id="First-name" class="form-control first-name" required>
+                <input type="text" aria-label="Last-name" id="Last-name" class="form-control last-name" required>
             </div>
 
             <!-- role -->
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Ruolo</span>
-                <input type="text" class="form-control role-member" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                <input type="text" id="role-member" class="form-control role-member" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
             </div>
 
             <!-- buttons -->
-            <button type="button" class="btn btn-success add-member">Aggiungi</button>
+            <button type="submit" class="btn btn-success add-member">Aggiungi</button>
             <button type="reset" class="btn btn-danger add-member">Svuota campi</button>
         </form>
 
         <!-- members card team -->
         <h1 class="pt-5 px-2">Elenco membri del team</h1>
-        <div class="teams d-flex flex-wrap justify-content-between"></div>
+        <div class="teams d-flex flex-wrap justify-content-between mb-4"></div>
 
 
     </div>

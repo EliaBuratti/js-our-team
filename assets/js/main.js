@@ -30,32 +30,32 @@ const memberTeam = [
     {
         nome: 'Wayne Barnett',
         ruolo: 'Founder & CEO',	
-        foto: './assets/img/wayne-barnett-founder-ceo.jpg'
+        foto: 'wayne-barnett-founder-ceo.jpg'
     },
     {
         nome: 'Angela Caroll',
         ruolo: 'Chief Editor',	
-        foto: './assets/img/angela-caroll-chief-editor.jpg'
+        foto: 'angela-caroll-chief-editor.jpg'
     },
     {
         nome: 'Walter Gordon',
         ruolo: 'Office Manager',	
-        foto: './assets/img/walter-gordon-office-manager.jpg'
+        foto: 'walter-gordon-office-manager.jpg'
     },
     {
         nome: 'Angela Lopez',
         ruolo: 'Social Media Manager',	
-        foto: './assets/img/angela-lopez-social-media-manager.jpg'
+        foto: 'angela-lopez-social-media-manager.jpg'
     },
     {
         nome: 'Scott Estrada',
         ruolo: 'Developer',	
-        foto: './assets/img/scott-estrada-developer.jpg'
+        foto: 'scott-estrada-developer.jpg'
     },
     {
         nome: 'Barbara Ramos',
         ruolo: 'Graphic Designer',	
-        foto: './assets/img/barbara-ramos-graphic-designer.jpg'
+        foto: 'barbara-ramos-graphic-designer.jpg'
     },
 
 ];
@@ -130,7 +130,7 @@ for (const key in memberTeam) {
     <ul class="list-group">
         <li class="list-group-item"><strong>${member.nome}</strong></li>
         <li class="list-group-item">${member.ruolo}</li>
-        <li class="list-group-item"><img src="${member.foto}"></li>
+        <li class="list-group-item"><img src="./assets/img/${member.foto}"></li>
     </ul>
     </div>`;
     
@@ -146,7 +146,9 @@ const addMemberEl = document.querySelector('button.add-member');
 
 //creo un eventlistener dal bottone 'aggiungi'
 
-addMemberEl.addEventListener('click', function() {
+addMemberEl.addEventListener('click', function(e) {
+
+    e.preventDefault();
 
     //ottengo i valori dall'input dell utente
     const firstNameEl = document.querySelector('.first-name').value;
@@ -164,7 +166,7 @@ addMemberEl.addEventListener('click', function() {
         });
 
         //invoco la funzione per stampare la card in pagina
-        newMember(memberTeam);
+        newMember(memberTeam, teamsElDom);
 
     } else { 
         
@@ -176,7 +178,13 @@ addMemberEl.addEventListener('click', function() {
 
 
 //creo una funzione per aggiungere un nuovo membro
-function newMember (choseArray) {
+
+/**
+ * 
+ * @param {Array} choseArray //array dove reperire le informazioni, obbligatorie 'nome' 'ruolo' foto'
+ * @param {object} DOMinsert // elemento della dom dove inserire i nuovi membri
+ */
+function newMember (choseArray, DOMinsert) {
 
         //creo una variabile cosi da non riscrivere tante volte 'memberTeam[key]'
         const lastMember = (choseArray.length) - 1;
@@ -193,7 +201,7 @@ function newMember (choseArray) {
         </ul>
         </div>`;
         
-        teamsElDom.insertAdjacentHTML('afterbegin', markup);
+        DOMinsert.insertAdjacentHTML('afterbegin', markup);
 }
 
 
